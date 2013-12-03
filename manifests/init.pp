@@ -89,17 +89,17 @@ class sabnzbd (
   $categories     = {}
 ) inherits sabnzbd::params {
 
-  # make it run apt-get update first
-  exec { "apt-update":
-    command => "/usr/bin/apt-get update"
+  apt::source { 'jcfp-repo':
+    location => "http://ppa.launchpad.net/jcfp/ppa/ubuntu",
+    repos => "main",
+    key => "4BB9F05F",
+    required_packages => 'add-apt-repository',
   }
-  
-  Exec["apt-update"] -> Package <| |>
 
   # on ubuntu it's available in official repositories since jaunty
   # though it's an old version. Will add the custom ppa soon.
   package { 'sabnzbdplus':
-    ensure  => installed,
+    ensure  => latest,
   }
 
   package { 'sabnzbdplus-theme-mobile':
