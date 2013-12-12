@@ -83,6 +83,7 @@ class sabnzbd (
   $nzb_key        = $::sabnzbd::params::nzb_key,
   $download_dir   = $::sabnzbd::params::download_dir,
   $complete_dir   = $::sabnzbd::params::complete_dir,
+  $permissions    = $::sabnzbd::params::permissions,
   $login_username = $::sabnzbd::params::login_username,
   $login_password = $::sabnzbd::params::login_password,
   $servers        = {},

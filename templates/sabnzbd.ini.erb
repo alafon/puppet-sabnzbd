@@ -6,7 +6,7 @@ __version__ = 19
 [[<%= key %>]]
 name = <%= key %>
 host = <%= value_hash['server_url'] %>
-enable = <%= value_hash['enabled'] || '1' %> 
+enable = <%= value_hash['enabled'] || '1' %>
 username = "<%= value_hash['username'] || '' %>"
 password = "<%= value_hash['password'] || '' %>"
 connections = <%= value_hash['connections'] %>
@@ -70,7 +70,7 @@ dirscan_dir = ""
 disable_api_key = 0
 email_to = ,
 rss_filenames = 0
-permissions = ""
+permissions = "<%= value_hash['permissions'] || '' %>"
 auto_disconnect = 1
 use_pickle = 0
 enable_date_sorting = 0
